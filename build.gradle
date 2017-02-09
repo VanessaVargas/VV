@@ -27,10 +27,3 @@ dependencies {
 }
 
 war.archiveName "altair.war"
-
-test {
-    reports {
-        junitXml.enabled = false
-        html.enabled = true
-    }               
-}
