@@ -12,7 +12,7 @@ public class ProfileServiceTest{
 	    given().
 	        contentType("application/json").
 	    when().
-	        get("/altair/rest/profiles").
+	        get("http://localhost:8585/altair/rest/profiles").
 	    then().
 	        body(containsString("profileName")).
 	        body(containsString("firstName")).
@@ -25,7 +25,7 @@ public class ProfileServiceTest{
 	    given().
 	        contentType("application/json").
 	    when().
-	        get("/altair/rest/profile/1").
+	        get("http://localhost:8585/altair/rest/profile/1").
 	    then().
 	        body(containsString("profileName")).
 	        body(containsString("firstname")).
