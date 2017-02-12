@@ -3,6 +3,7 @@ package com.jalasoft.model;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -30,7 +31,15 @@ public class Profile {
 		this.lastName = lastName;
 		this.created = new Date();
 	}
-
+	
+	public Profile(String profileName, String firstName, String lastName) 
+	{
+		this.profileName = profileName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.created = new Date();
+	}
+	
 	public long getId() 
 	{
 		return id;

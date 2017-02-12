@@ -10,6 +10,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -25,9 +26,14 @@ public class ProfileResource {
 	private ProfileService profileService = new ProfileService();
 	
 	@GET
-	public List<Profile> getProfiles()
+	public Response getProfiles()
 	{
-		return profileService.getAllProfiles();
+		List<Profile> profiles = profileService.getAllProfiles();
+		
+		GenericEntity<List<Profile>> profilesList = new GenericEntity<List<Profile>>(profiles) {};
+		return Response.status(Status.OK)
+				.entity(profilesList)
+				.build();
 	}
 	
 	@POST
@@ -41,9 +47,12 @@ public class ProfileResource {
 	
 	@GET
 	@Path("/{profileId}")
-	public Profile getProfile(@PathParam("profileId") long profileId)
+	public Response getProfile(@PathParam("profileId") long profileId)
 	{
-		return profileService.getProfile(profileId);
+		Profile profile = profileService.getProfile(profileId);
+		return Response.status(Status.OK)
+				.entity(profile)
+				.build();
 	}
 	
 	@PUT
