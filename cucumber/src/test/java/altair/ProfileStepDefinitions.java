@@ -33,7 +33,7 @@ public class ProfileStepDefinitions {
 				contentType(ContentType.JSON).
 				body(requestBody).
         when().
-        	post("/altair/rest/profiles");
+        	post("http://localhost:8585/altair/rest/profiles");
 		
 		logger.info("Object Created:" + profileCreated.getBody().asString());
 	}
@@ -47,7 +47,7 @@ public class ProfileStepDefinitions {
 		given().
 				contentType(ContentType.JSON).
         when().
-			get("/altair/rest/profiles/" + id).
+			get("http://localhost:8585/altair/rest/profiles/" + id).
     	then().
 	        body(containsString(profile)).
 	        statusCode(200);
