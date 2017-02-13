@@ -2,8 +2,6 @@ package com.jalasoft.profile;
 
 import java.util.List;
 import javax.ws.rs.core.Response;
-
-import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -57,6 +55,5 @@ public class ProfileServiceTest{
 		Assert.assertNotNull(response);
 		Assert.assertEquals(200, response.getStatus());
 		Assert.assertEquals(firstProfile, payload);
-	}
-	
+	}	
 }

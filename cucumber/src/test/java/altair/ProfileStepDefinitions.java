@@ -28,7 +28,7 @@ public class ProfileStepDefinitions {
 		requestBody.put("firstName", "Test127123");
 		requestBody.put("lastName", "abc@gmail.com");
 		
-		profileCreated = given().
+		profileCreated = given(). // NOSONAR
 				accept(ContentType.JSON).
 				contentType(ContentType.JSON).
 				body(requestBody).
