@@ -30,7 +30,15 @@ public class Profile {
 		this.lastName = lastName;
 		this.created = new Date();
 	}
-
+	
+	public Profile(String profileName, String firstName, String lastName) 
+	{
+		this.profileName = profileName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.created = new Date();
+	}
+	
 	public long getId() 
 	{
 		return id;

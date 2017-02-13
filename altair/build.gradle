@@ -9,7 +9,8 @@ repositories {
 }
 
 dependencies {
-	compile "javax.ws.rs:jsr311-api:1.1.1"
+	
+	compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0'
 	
 	compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.25'
 	compile group: 'org.glassfish.jersey.core', name: 'jersey-server', version: '2.25'
@@ -26,11 +27,9 @@ dependencies {
 	testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
-war.archiveName "altair.war"
-
 test {
-    reports {
-        junitXml.enabled = false
-        html.enabled = true
-    }               
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
 }
+
+war.archiveName "altair.war"
