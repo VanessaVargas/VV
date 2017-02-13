@@ -1,2 +1,2 @@
-rootProject.name = 'altair'
-
+include 'altair'
+include 'cucumber'
